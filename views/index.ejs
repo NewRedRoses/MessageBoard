@@ -1,0 +1,8 @@
+<h1><%- title %></h1>
+<ul>
+  <% messages.forEach((message) => { %>
+  <li>
+    <%- `(${message.added.toDateString()}) ${message.user}: ${message.text}` %>
+  </li>
+  <% })%>
+</ul>
