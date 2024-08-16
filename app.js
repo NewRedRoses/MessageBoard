@@ -8,23 +8,13 @@ const PORT = 3000;
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-// Data
-const messages = [
-  {
-    text: "Hello!",
-    user: "Armand",
-    added: new Date(),
-  },
-  {
-    text: "How are you doing, Armand?",
-    user: "Gwyn",
-    added: new Date(),
-  },
-];
+// Allowing express to retrieve data from forms
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.render("index", { title: "Mini Message-board", messages: messages });
-});
+// Routers
+const indexRouter = require("./routes/indexRouter");
+app.use("/", indexRouter);
+
 app.get("/new", (req, res) => {
   res.render("form");
 });
