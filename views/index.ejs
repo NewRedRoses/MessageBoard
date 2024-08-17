@@ -3,6 +3,8 @@
   <% messages.forEach((message) => { %>
   <li>
     <%- `(${message.added.toDateString()}) ${message.user}: ${message.text}` %>
+    <button>Open</button>
   </li>
   <% })%>
 </ul>
+<a href="/new">Submit a new message!</a>
