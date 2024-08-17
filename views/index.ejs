@@ -1,10 +1,21 @@
-<h1><%- title %></h1>
-<ul>
-  <% messages.forEach((message) => { %>
-  <li>
-    <%- `(${message.added.toDateString()}) ${message.user}: ${message.text}` %>
-    <button>Open</button>
-  </li>
-  <% })%>
-</ul>
-<a href="/new">Submit a new message!</a>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%- title %></h1>
+    <ul>
+      <% messages.forEach((message,index) => { %>
+      <li>
+        <%- `(${message.added.toDateString()}) ${message.user}: ${message.text}`
+        %>
+        <a href="/messages/<%= index %>">Open</a>
+      </li>
+      <% })%>
+    </ul>
+    <a href="/new">Submit a new message!</a>
+  </body>
+</html>
