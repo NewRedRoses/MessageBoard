@@ -2,21 +2,10 @@ const { Router } = require("express");
 const indexRouter = Router();
 
 // Data
-const messages = [
-  {
-    text: "Hello!",
-    user: "Armand",
-    added: new Date(),
-  },
-  {
-    text: "How are you doing, Armand?",
-    user: "Gwyn",
-    added: new Date(),
-  },
-];
+const messages = [];
 
 indexRouter.get("/", (req, res) => {
-  res.render("index", { title: "Mini Message-board", messages: messages });
+  res.render("index", { title: "Mini Message Board", messages: messages });
 });
 
 indexRouter.get("/messages/:id", (req, res) => {
