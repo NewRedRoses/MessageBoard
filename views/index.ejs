@@ -14,8 +14,8 @@
     <ul>
       <% messages.forEach((message,index) => { %>
       <li>
-        <%- `(${message.added.toDateString()}) ${message.user}: ${message.text}`
-        %>
+        [<%- message.added.toDateString() %>]
+        <b> <%- message.user %></b>: <%- message.text %>
         <a href="/messages/<%= index %>">Open</a>
       </li>
       <% })%>
