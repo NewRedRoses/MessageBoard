@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to <%- title %>!</title>
+    <title>Welcome to <%= title %>!</title>
   </head>
   <body>
-    <h1>Welcome to Mark's <%- title %>!</h1>
+    <h1>Welcome to Mark's <%= title %>!</h1>
     <p>
       Please feel free to write any messages with the link below but
       <b> please do not add any offensive messages or any nonsense</b> 😓
@@ -14,8 +14,8 @@
     <ul>
       <% messages.forEach((message,index) => { %>
       <li>
-        [<%- message.added.toDateString() %>]
-        <b> <%- message.user %></b>: <%- message.text %>
+        [<%= message.added.toDateString() %>]
+        <b> <%= message.user %></b>: <%= message.text %>
         <a href="/messages/<%= index %>">Open</a>
       </li>
       <% })%>
