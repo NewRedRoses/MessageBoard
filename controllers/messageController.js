@@ -5,7 +5,7 @@ const messages = [];
 
 async function displayAllMessages(req, res) {
   res.render("index", { title: "Mini Message Board", messages: messages });
-  const allMessages = await db.getAllMessages;
+  const allMessages = await db.getAllMessages();
 }
 
 async function expandMessage(req, res) {
