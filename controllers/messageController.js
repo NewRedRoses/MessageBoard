@@ -4,8 +4,8 @@ const db = require("../db/queries");
 const messages = [];
 
 async function displayAllMessages(req, res) {
+  const messages = await db.getAllMessages();
   res.render("index", { title: "Mini Message Board", messages: messages });
-  const allMessages = await db.getAllMessages();
 }
 
 async function expandMessage(req, res) {
@@ -13,11 +13,8 @@ async function expandMessage(req, res) {
 }
 
 async function addMessage(req, res) {
-  messages.push({
-    text: req.body.message,
-    user: req.body.name,
-    added: new Date(),
-  });
+  const { message, name } = req.body;
+  await db.addMessageToDb(message, name, new Date());
   res.redirect("/");
 }
 
