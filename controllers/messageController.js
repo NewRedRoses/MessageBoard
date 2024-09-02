@@ -9,6 +9,7 @@ async function displayAllMessages(req, res) {
 }
 
 async function expandMessage(req, res) {
+  const messages = await db.getAllMessages();
   res.render("msgContent", { message: messages[req.params.id] });
 }
 
